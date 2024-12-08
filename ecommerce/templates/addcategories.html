@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-5 p-3 mx-auto" style="margin-bottom:100px;">
+
+    <form method="POST">
+
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+              <input type="text" class="form-control" name="n" placeholder="Enter your name">
+            </div>
+
+    <div class="mb-3">
+  <label for="formFileSm" class="form-label">Image</label>
+  <input class="form-control form-control-sm" id="formFileSm" type="file">
+</div>
+
+    <div class="mb-3">
+    <label class="form-label">Description</label>
+        <textarea class="form-control" name="d" placeholder="Write category description"></textarea>
+    </div>
+
+
+
+
+     <div class="mb-3">
+<button type="submit" value="submit" class="form-control btn btn-outline-success">Submit</button>
+  </div>
+</form>
+</div>
+{% endblock %}

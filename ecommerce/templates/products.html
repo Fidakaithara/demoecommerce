@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .class1{
+    margin:auto;
+    border: 1px solid white;
+    padding:20px;
+    justify-content:space-around;
+    align-items:center;}
+
+</style>
+<div class="class1">
+    <img src="{{cat.image.url}}" height="650px" width="100%">
+</div>
+<div class="class1">
+    <h1 class="text-center mt-0 text-secondary"><b>{{cat.name}}</b></h1>
+</div>
+<div class="class1">
+    <p>{{cat.description}}</p>
+</div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+        {% for i in pro %}
+              <div class="col-md-4">
+                <article class="post-item card border-1 shadow-sm p-3">
+                  <div class="image-holder zoom-effect">
+                    <a href="#">
+                      <img src="{{i.image.url}}" alt="post" class="card-img-top" height="350px">
+                    </a>
+                  </div>
+                  <div class="card-body text-center">
+                    <div class="post-header">
+                      <h3 class="post-title">{{i.name}}
+                      </h3>
+                        <p><i class="fa-solid fa-indian-rupee-sign"></i>{{i.price}}</p>
+                        <a href="{% url 'shop:productdetails' i.id %}" class="btn btn-outline-secondary ">Details</a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+        {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+
+
